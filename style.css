@@ -1,0 +1,58 @@
+*{
+    margin: 0%;
+    font-weight: 450;
+}
+.global{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+.parent{
+    width: auto;
+    border:2px solid rgb(40, 118, 215);
+    margin: 3% 3%;
+    padding: 20px;
+    background-color: rgb(142, 197, 248);
+    border-radius: 3%; 
+    color: rgb(14, 14, 15);  
+}
+.enfant{
+    width: 80%;
+    display: grid;
+    margin: 2% 6%;
+    overflow: hidden;
+}
+.enfant select,label{
+    width: 100%;
+}
+.enfant input{
+    border: none;
+    outline: none;
+}
+
+.enfant select{
+    border:none;
+    outline: none;
+}
+.enfant button{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px 10px;
+    font-weight: bold;
+   
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+table th,td{
+    margin: 1% 1%;
+    border: 2px solid rgb(6, 153, 251);
+}
+table button{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px 10px;
+    margin: 2px;
+}

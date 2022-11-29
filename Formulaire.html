@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./Javascript.js"></script>
+    <title>Magasin de ventes de produits cosmetiques</title>
+</head>
+<body>
+    <div class="global">
+        <div class="parent">
+            <form>
+            <div class="enfant">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom">
+                <span id="Vnom"></span>
+            </div>
+            <div class="enfant">
+                <label for="marque">Marque:</label>
+                <input type="text" id="marque"> 
+                <span id="Vmarque"></span>
+            </div>
+            <div class="enfant">
+                <label for="prix">Prix:</label>
+                <input type="text" id="prix">
+                <span id="Vprix"></span>   
+            </div>
+            <div class="enfant">
+                <label for="dateproduction">Date de production:</label>  
+                <input type="date" id="dateproduction">
+                <span id="Vdateproduction"></span> 
+            </div>
+            <div class="enfant">
+                <label for="promotion">Promotion:</label>
+                <div>
+                    <input type="radio" name="promotion" id="oui" value="En promotion" >Oui
+                    <input type="radio" name="promotion" id="non" value="Sans promotion" >Non 
+                </div>
+                <span id="Vpromotion"></span>
+            </div>
+            
+            <div class="enfant">
+                <label for="type">Type:</label>
+                <select id="type">
+                <option >Veuillez selectionner ...</option>
+                <option>Hygiène et toilette</option>
+                <option>Soins esthétiques</option>
+                <option>Produits solaires</option>
+                <option>Beauté des mains et des pieds</option>
+                <option>Produits de maquillage</option>
+                <option>Entretien capillaires</option>
+                <option>Parfums</option>
+                </select> 
+                <span id="Vtype"></span>
+            </div>
+            <div class="enfant">
+                <button id="ajouter" onclick="valider(event)">Ajouter</button>
+            </div>
+        </form>
+        </div>
+    <div class="parent">
+        <table id="tableau">
+          <tr>
+            <th>Nom</th>
+            <th>Marque</th>
+            <th>Prix</th>
+            <th>Date de production</th>
+            <th>Promotion</th>
+            <th>Type</th>
+            <th>Modification</th>
+          </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
