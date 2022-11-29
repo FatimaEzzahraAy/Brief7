@@ -1,3 +1,4 @@
+ 
 
 let nom = document.getElementById("nom");
 let vnom = document.getElementById("Vnom");
@@ -138,7 +139,8 @@ function valider(e) {
         cnom.innerHTML = nom.value;
         cmarque.innerHTML = marque.value;
         cprix.innerHTML = prix.value;
-        cdateproduction.innerHTML = dateproduction.value;
+
+        cdateproduction.innerHTML = dateproduction.value.split("-").reverse().join("-"); //lorsque il trouve "-" inverse la date et le separateur -
         ctype.innerHTML = type.value;
         if (document.getElementById("oui").checked == true) {
             cpromotion.innerHTML = document.getElementById("oui").value;   
@@ -149,7 +151,29 @@ function valider(e) {
         //Pour supprimer une ligne
         bsupprimer.onclick = supprimer;
         function supprimer() {
-            tableau.removeChild(ligne);
+            let supp = document.createElement('div');
+            let parag = document.createElement('p');
+            let okB = document.createElement('button');
+            let anuler = document.createElement('button');
+            let body = document.getElementById('body');
+            okB.innerHTML = "Ok";
+            anuler.innerHTML = "Annuler";
+            parag.innerHTML = "Voulez vous supprimer cette ligne?";
+            supp.setAttribute("class","fenetreSupp");
+            body.appendChild(supp);
+            supp.appendChild(parag);
+            supp.appendChild(okB);
+            supp.appendChild(anuler);
+              okB.onclick = ok;
+              function ok(){
+                supp.remove();
+                tableau.removeChild(ligne);
+              }
+             anuler.onclick = annuler;
+             function annuler() {
+                supp.remove();
+             }
+                
         }
    
         //Pour modifier une ligne
@@ -159,7 +183,7 @@ function valider(e) {
             nom.value = tableau.rows[ligne.rowIndex].cells[0].innerText;
             marque.value = tableau.rows[ligne.rowIndex].cells[1].innerText;
             prix.value = tableau.rows[ligne.rowIndex].cells[2].innerText;
-            dateproduction.value = tableau.rows[ligne.rowIndex].cells[3].innerText;
+            dateproduction.value = tableau.rows[ligne.rowIndex].cells[3].innerText.split("-").reverse().join("-");
             document.getElementById("type").value = tableau.rows[ligne.rowIndex].cells[5].innerText;
             if (cpromotion.innerHTML == "En promotion") {
                 document.getElementById("oui").checked = true;
@@ -175,7 +199,7 @@ function valider(e) {
                     tableau.rows[ligne.rowIndex].cells[0].innerText = nom.value;
                     tableau.rows[ligne.rowIndex].cells[1].innerText= marque.value;
                     tableau.rows[ligne.rowIndex].cells[2].innerText = prix.value;
-                    tableau.rows[ligne.rowIndex].cells[3].innerText = dateproduction.value;
+                    tableau.rows[ligne.rowIndex].cells[3].innerText = dateproduction.value.split("-").reverse().join("-");
                     tableau.rows[ligne.rowIndex].cells[5].innerText = type.value;
                     if (document.getElementById("oui").checked == true) {
                         tableau.rows[ligne.rowIndex].cells[4].innerText = document.getElementById("oui").value;   
@@ -192,3 +216,7 @@ function valider(e) {
         }
     
 }
+  // let confirmation =confirm("Voulez vous supprimer cette ligne?");
+            // if (confirmation) {
+            //     tableau.removeChild(ligne);
+            // }
